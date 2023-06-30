@@ -1,6 +1,6 @@
 # Module adventure-kotlin-dsl
 
-A kotlin DSL for adventure
+A Kotlin DSL for adventure
 
 ## Features
 
