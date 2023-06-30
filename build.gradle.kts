@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "ca.solo-studios"
-//version = rootProject.scmVersion.version
+version = rootProject.scmVersion.version
 
 dependencies {
     implementation(libs.adventure.api)

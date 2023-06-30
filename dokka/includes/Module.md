@@ -4,7 +4,8 @@ A kotlin DSL for adventure
 
 ## Features
 
-- TODO
+- Kotlin utilities for [Adventure](https://docs.advntr.dev/)
+- Kotlin DSL for creating and appending components
 
 ## Including
 
@@ -40,4 +41,34 @@ ${project.module} = { group = "${project.group}", name = "${project.module}", ve
 
 ## Examples
 
-TODO
+### Kotlin-style DSL for Adventure
+
+```kotlin
+val text = text { // creates a new text component
+    content("Test ")
+
+    style { // this style is automatically applied to the text component
+        color(NamedTextColor.GOLD)
+        decorate(TextDecoration.BOLD)
+    }
+
+    text { // this text component is automatically added as a child component
+        content("123")
+        style { // this style is automatically applied to the text component
+            color(NamedTextColor.RED)
+        }
+    }
+
+    translatable { // this translatable component is automatically added as a child component
+        key("whatever")
+        args(
+            text {
+                content("arg1 content")
+            },
+            text {
+                content("arg2 content")
+            },
+        )
+    }
+}
+```
